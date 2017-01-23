@@ -1,0 +1,250 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: whitesmoke;
+    font-family: Raleway, Arial, sans-serif;
+    margin: 0px;
+    font-size: 14px;
+    min-width: 320px;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0px;
+    clear: both;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0px auto;
+    padding: 10px 20px 30px;
+    background: #FFF;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.1);
+}
+
+.title {
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.items-list {
+    margin-top: 20px;
+}
+
+.items-list table {
+    width: 100%;
+    font-size: 13px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-collapse:collapse;
+}
+
+.items-list table thead {
+    background: #2F569C;
+    color: #fff;
+}
+
+.items-list table thead td a {
+    color: #fff;
+    opacity: 0.3;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.items-list table thead td a.active {
+    opacity: 1;
+}
+
+.items-list table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.items-list table tr td:not(:last-child) {
+    border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.items-list table tbody tr:not(.new) td input,
+.items-list table tbody tr:not(.new) td select {
+    display: none;
+}
+
+.items-list table tbody tr.disabled {
+    opacity: 0.3;
+}
+
+.items-list table tbody tr:nth-child(even) {
+    background: rgba(0,0,0,0.05);
+}
+
+.items-list table tbody tr.active {
+    background: rgba(210, 221, 240, 0.57);
+}
+
+.items-list table tbody tr.active td span.inp {
+    border: 1px solid #fff;
+    background: rgba(255,255,255,0.4);
+}
+
+.action-item {
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 3px;
+    padding: 2px 4px;
+    color: rgba(0,0,0,0.7);
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+.items-list table tbody tr:not(.disabled) .action-item {
+    cursor: pointer;
+}
+
+.action-item.edit {
+    margin-right: 5px;
+}
+
+.action-item.edit.active {
+    background: rgba(50, 131, 48, 0.7);
+    color: #fff;
+}
+
+.action-item.add {
+    display: inline-block;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.action-item.generate {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.action-item.report {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.items-list table tbody tr:not(.disabled) .action-item.edit:not(.active):hover {
+    background: #325492;
+    color: #fff;
+}
+
+.items-list table tbody tr:not(.disabled) .action-item.del:hover {
+    background: #C52A2A;
+    color: #fff;
+}
+
+.none {
+    display: none;
+}
+
+.alert {
+    padding: 10px;
+    margin: 20px 0px 10px;
+    border: 1px solid;
+    color: #117524;
+    background: #F4F8F5;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.main-tabs-control {
+    padding: 0px;
+    margin: 15px auto;
+}
+
+.main-tabs-control div {
+    width: 33.333%;
+    float: left;
+    padding: 20px;
+    background: #e4e8ef;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+}
+
+.main-tabs-control div.active {
+    background: rgb(255, 121, 69);
+    color: #FFF;
+}
+
+.main-tabs-control div:not(:last-child) {
+    border-right: 1px solid #FFF;
+}
+
+@media screen and (min-width: 481px) and (max-width: 660px) {
+    .items-list table thead td a {
+        display: block;
+    }
+
+    .items-list table td {
+        text-align: center;
+    }
+
+    .action-item.edit,
+    .action-item.del {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+    }
+
+    .action-item.edit span,
+    .action-item.del span{
+        display: none;
+    }
+
+    .action-item.edit {
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .items-list thead {
+        display: none;
+    }
+
+    .items-list tbody td::before {
+        content: attr(data-cname)": ";
+        color: #2C5AAB;
+        font-weight: bold;
+    }
+
+    .items-list table tbody td span.inp {
+        padding: 0px;
+        display: block;
+        max-width: 250px;
+    }
+
+    .items-list tbody tr:not(.new) {
+        display: block;
+        padding: 10px 15px 15px;
+    }
+
+    .items-list tbody td {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        border-bottom: 0px;
+        padding: 5px 0px 5px;
+    }
+
+    .items-list table tr td:not(:last-child) {
+        border-right: 0px ;
+    }
+
+    .items-list table tbody tr.active td span.inp {
+        padding: 5px;
+    }
+}
